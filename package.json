@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "watch": "npx nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,8 @@
     "morgan": "^1.9.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "eslint": "^4.19.1",
+    "nodemon": "^1.17.5",
+    "prettier": "^1.13.5"
   }
 }

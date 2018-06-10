@@ -1,23 +1,23 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const Person = require('./models/person');
+require('dotenv').config()
+const mongoose = require('mongoose')
+const Person = require('./models/person')
 
 if (process.argv.length > 2) {
   const person = new Person({
     name: process.argv[2],
     number: process.argv[3]
-  });
+  })
 
-  person.save().then(response => {
-    console.log("person saved!");
-    mongoose.connection.close();
-  });
+  person.save().then(() => {
+    console.log('person saved!')
+    mongoose.connection.close()
+  })
 } else {
-  console.log('Puhelinluettelo:');
+  console.log('Puhelinluettelo:')
   Person.find({}).then(result => {
     result.forEach(person => {
-      console.log(`${person.name} ${person.number}`);
-    });
-    mongoose.connection.close();
-  });
+      console.log(`${person.name} ${person.number}`)
+    })
+    mongoose.connection.close()
+  })
 }
